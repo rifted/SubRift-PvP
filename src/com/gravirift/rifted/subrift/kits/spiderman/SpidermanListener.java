@@ -15,6 +15,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -89,6 +90,15 @@ public class SpidermanListener implements Listener{
 					}
 				}
 			}
+		}
+	}
+	
+	@EventHandler
+	public void projectile(ProjectileHitEvent evt){
+		if(evt.getEntityType() == EntityType.SNOWBALL){
+			//if()
+			Location loc = evt.getEntity().getLocation();
+			loc.getWorld().getBlockAt(loc).setType(Material.WEB);
 		}
 	}
 }

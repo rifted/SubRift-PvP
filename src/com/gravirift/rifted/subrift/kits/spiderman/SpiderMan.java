@@ -17,7 +17,7 @@ public class SpiderMan extends Kit{
 	@Override
 	public ItemStack[] kitItems(){
 		
-		ItemStack summonSpider = new ItemStack(Material.SULPHUR, 1);
+		ItemStack summonSpider = new ItemStack(Material.SPIDER_EYE, 1);
 		ItemMeta ssMeta = summonSpider.getItemMeta();
 		ssMeta.setDisplayName(ChatColor.RESET+"Summon Spider");
 		summonSpider.setItemMeta(ssMeta);

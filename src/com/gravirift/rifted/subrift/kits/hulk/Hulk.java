@@ -44,7 +44,7 @@ public class Hulk extends Kit{
 	@Override
 	public PotionEffect[] kitEffects(){
 		PotionEffect[] effects = {
-			new PotionEffect(PotionEffectType.SLOW, Integer.MAX_VALUE, 1),
+			new PotionEffect(PotionEffectType.SLOW, Integer.MAX_VALUE, 2),
 			new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1)
 		};
 		return effects;

@@ -19,7 +19,8 @@ public class HulkListener implements Listener{
 			l.setPitch(-25);
 			Vector v = l.getDirection().multiply(2);
 			event.getRightClicked().setVelocity(v);
-			((LivingEntity) event.getRightClicked()).addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 4));
+			((LivingEntity) event.getRightClicked()).addPotionEffect(new PotionEffect(PotionEffectType.HARM, 5, 0));
+			event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 100, 2));
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package com.gravirift.rifted.subrift;
 
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -41,6 +42,7 @@ public class Main extends JavaPlugin{
 				if(args.length >= 1){
 					String kit = args[0];
 					if(KitManager.isKit(kit)){
+						p.setHealth(0.0);
 						KitManager.setKit(p, KitManager.getKit(kit));
 						p.sendMessage(ChatColor.GREEN+"Good Luck!");
 					}else{
@@ -49,10 +51,7 @@ public class Main extends JavaPlugin{
 					return true;
 				}else{
 					p.sendMessage(ChatColor.YELLOW+"There are "+KitManager.availableKits().size()+" kits:");
-					String kits = "";
-					for(String s : KitManager.availableKits()){
-						kits += s+", ";
-					}
+					String kits = StringUtils.join(KitManager.availableKits(),", ");
 					p.sendMessage(ChatColor.YELLOW+kits);
 					return true;
 				}
