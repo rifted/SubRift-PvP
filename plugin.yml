@@ -1,0 +1,12 @@
+name: SubRift
+version: 0.0.1
+description: A non-generic Bukkit PvP plugin.
+author: Rifted
+main: com.gravirift.rifted.subrift.Main
+
+commands:
+   kit:
+      description: Choose your kit!
+      usage: /kit <kit name>
+      permission: subrift.kit
+      permission-message: You don't have <permission>
