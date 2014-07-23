@@ -17,6 +17,10 @@ $RECYCLE.BIN/
 #Eclipse
 .classpath
 .project
+**bin/
+**/bin/
+bin/
+*.class
 
 # =========================
 # Operating System Files

@@ -11,16 +11,19 @@ import org.bukkit.util.Vector;
 
 import com.gravirift.rifted.subrift.kits.KitManager;
 
-public class HulkListener implements Listener{
+public class HulkListener implements Listener {
 	@EventHandler
-	public void interactEvent(PlayerInteractEntityEvent event){
-		if(KitManager.playerHasKit(event.getPlayer(), "hulk")){
+	public void interactEvent(PlayerInteractEntityEvent event) {
+		if (KitManager.playerHasKit(event.getPlayer(), "hulk")) {
 			Location l = event.getPlayer().getEyeLocation();
 			l.setPitch(-25);
 			Vector v = l.getDirection().multiply(2);
 			event.getRightClicked().setVelocity(v);
-			((LivingEntity) event.getRightClicked()).addPotionEffect(new PotionEffect(PotionEffectType.HARM, 5, 0));
-			event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 100, 2));
+			((LivingEntity) event.getRightClicked())
+					.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 5,
+							0));
+			event.getPlayer().addPotionEffect(
+					new PotionEffect(PotionEffectType.WEAKNESS, 100, 2));
 		}
 	}
 }
